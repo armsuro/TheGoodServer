@@ -20,6 +20,7 @@ module.exports = {
                     var response = user;
                     user.save(function(err) {
                         if (err) return res.serverError(err);
+
                         return res.json(response);
                     });
                 } else {
