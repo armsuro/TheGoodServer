@@ -10,4 +10,13 @@ module.exports = {
             req.json(401, Msg.getMessage(401, "Email or message required"))
         }
     },
+    getSliderData: function(req, res) {
+        Sliders.find({
+            status: true
+        }).exec(function(err, data) {
+            if (err) return res.serverError(err)
+
+            res.json(data)
+        })
+    }
 }
