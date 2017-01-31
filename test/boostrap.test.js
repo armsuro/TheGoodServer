@@ -4,8 +4,8 @@ if (process.env.local_test) {
     url = "http://localhost:1337/";
     authorizationHeader = "1111";
 } else {
-    url = "https://api.dataowl.io/";
-    authorizationHeader = "oP1EkH0yE2K5TonJpE";
+    url = "";
+    authorizationHeader = "";
 }
 before(function(done) {
     Sails.lift({

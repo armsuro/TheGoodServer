@@ -3,8 +3,8 @@ describe("Users Controller", function() {
     it("Signin client", function(done) {
         var req = request.post("users/signIn");
         req.send({
-            "username": "suren.gasparyan",
-            "password": "test1234@A"
+            "username": "suren",
+            "password": "1234"
         })
         req.end(function(err, res) {
             if (err) throw err;
