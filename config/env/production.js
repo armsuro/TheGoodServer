@@ -1,5 +1,4 @@
 module.exports = {
-    hookTimeout: 60000000,
     models: {
         connection: 'liveMysqlServer',
         migrate: 'safe',
@@ -41,9 +40,5 @@ module.exports = {
                 })
             });
         }
-    },
-    session: {
-        adapter: 'redis',
-        url: process.env.REDIS_URL
     }
 };

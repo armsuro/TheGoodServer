@@ -22,22 +22,4 @@
 
 module.exports.routes = {
 
-    '/register': 'users.registerForMessages',
-    '/users/changeUserInformation': 'users.changeUserInformation',
-    '/users/getAllUsers': 'users.getAllUsers',
-    '/users/create': 'users.create',
-    '/url/getEncryptUrl': 'url.getEncryptUrl',
-    '/url/uploadImages': 'url.uploadImages',
-    '/url/:encrypt': 'url.getUrl',
-    '/url/get/:file': 'url.get',
-    '/url/job/changeLinkStatus': 'url.changeLinkStatus',
-    
-    '/q/:question/:answer/:user_code': 'QuizController.openUrl',
-    '/q/createQuiz': 'QuizController.createQuiz',
-    '/q/updateQuiz': 'QuizController.updateQuiz',
-    '/q/getQuizzes': 'QuizController.getQuizzes',
-    '/q/getQuiz': 'QuizController.getQuiz',
-    '/q/deleteQuiz': 'QuizController.deleteQuiz',
-    '/q/sendQuizToAllSupscribers': 'QuizController.sendQuizToAllSupscribers',
-    '/q/getUsersReports': 'QuizController.getUsersReports'
 };

@@ -44,8 +44,8 @@ module.exports.sockets = {
     // -OR-
     //
 
-    adapter: 'socket.io-redis',
-    url: process.env.DOKKU_REDIS_PURPLE_URL,
+    // adapter: 'socket.io-redis',
+    // url: process.env.DOKKU_REDIS_PURPLE_URL,
 
 
 
@@ -103,10 +103,10 @@ module.exports.sockets = {
      * app's security.                                                          *
      *                                                                          *
      ***************************************************************************/
-    allowUpgrades: false,
-    beforeConnect: function(handshake, cb) {
-        return cb(null, true);
-    },
+    // allowUpgrades: false,
+    // beforeConnect: function(handshake, cb) {
+    //     return cb(null, true);
+    // },
 
 
     /***************************************************************************
@@ -131,6 +131,6 @@ module.exports.sockets = {
      * transport should be disabled.                                            *
      *                                                                          *
      ***************************************************************************/
-    transports: ["websocket","polling"]
+    // transports: ["websocket","polling"]
 
 };

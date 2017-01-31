@@ -47,7 +47,7 @@ module.exports.cors = {
      *                                                                          *
      ***************************************************************************/
 
-    origin: 'http://localhost, https://app.dataowl.io, https://cpm.dataowl.io, https://dataowl.io, https://api.dataowl.io, https://beta.dataowl.io',
+    origin: '*',
 
     /***************************************************************************
      *                                                                          *
