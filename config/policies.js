@@ -24,5 +24,9 @@ module.exports.policies = {
 
     'UsersController': {
         'signIn': true
+    },
+
+    'PublicController': {
+        '*': true
     }
 };
