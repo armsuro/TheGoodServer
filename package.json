@@ -1,0 +1,68 @@
+{
+  "name": "DataOwlServer",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "keywords": [],
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "connect-redis": "3.0.2",
+    "crypto": "0.0.3",
+    "csvjson": "^2.2.2",
+    "ejs": "2.3.4",
+    "grunt": "1.0.1",
+    "grunt-contrib-clean": "1.0.0",
+    "grunt-contrib-coffee": "1.0.0",
+    "grunt-contrib-concat": "1.0.1",
+    "grunt-contrib-copy": "1.0.0",
+    "grunt-contrib-cssmin": "1.0.1",
+    "grunt-contrib-jst": "1.0.0",
+    "grunt-contrib-less": "1.3.0",
+    "grunt-contrib-uglify": "1.0.1",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-sails-linker": "~0.10.1",
+    "grunt-sync": "0.5.2",
+    "include-all": "~0.1.6",
+    "mailer": "^0.6.7",
+    "mocha": "^3.1.2",
+    "moment": "^2.15.2",
+    "moment-timezone": "^0.5.9",
+    "nodemailer": "^2.6.4",
+    "nodemailer-smtp-transport": "^2.7.2",
+    "path": "^0.12.7",
+    "pm2": "^2.1.5",
+    "pm2-slack": "^0.3.0",
+    "rc": "1.0.1",
+    "request": "^2.75.0",
+    "sails": "~0.12.4",
+    "sails-disk": "~0.10.9",
+    "sails-mysql": "^0.11.5",
+    "sails.io.js": "^0.14.0",
+    "simple-rate-limiter": "^0.2.3",
+    "skipper": "^0.7.1",
+    "socket.io-redis": "1.0.0",
+    "stripe": "^4.12.0",
+    "supertest": "^2.0.1",
+    "utf8": "^2.1.2",
+    "util": "^0.10.3"
+  },
+  "engines": {
+    "node": "4.6.1"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha --reporter mocha-circleci-reporter test/*.js",
+    "debug": "node debug app.js",
+    "prestart": "node_modules/.bin/pm2 install pm2-slack && node_modules/.bin/pm2 set pm2-slack:slack_url https://hooks.slack.com/services/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 && node_modules/.bin/pm2 set pm2-slack:log true && node_modules/.bin/pm2 set pm2-slack:error true",
+    "start": "NODE_ENV=production node_modules/.bin/pm2-docker app.js -i 3"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/suro/DataOwlServer.git"
+  },
+  "author": "suro",
+  "license": "",
+  "devDependencies": {
+    "mocha-circleci-reporter": "0.0.2"
+  }
+}
