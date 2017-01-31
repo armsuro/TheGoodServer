@@ -45,7 +45,7 @@ module.exports.connections = {
         host: 'localhost',
         user: 'root',
         password: '123456',
-        database: 'sms_platform'
+        database: 'the_good'
     },
 
     liveMysqlServer: {
