@@ -20,6 +20,9 @@ module.exports = {
         author_id: {
             type: 'integer'
         },
+        category_id: {
+            type: "integer"
+        },
         createdAt: {
             columnName: "created_at",
             type: "datetime"
