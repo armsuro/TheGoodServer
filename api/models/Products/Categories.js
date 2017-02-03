@@ -13,6 +13,10 @@ module.exports = {
         createdAt: {
             columnName: "created_at",
             type: "datetime"
+        },
+        products: {
+            collection: 'Products',
+            via: 'categories'
         }
     }
 };

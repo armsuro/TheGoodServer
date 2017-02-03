@@ -26,6 +26,14 @@ module.exports = {
         createdAt: {
             columnName: "created_at",
             type: "datetime"
+        },
+        categories: {
+            model: 'Categories',
+            columnName: 'category_id'
+        },
+        ingredient: {
+            model: 'Ingredient',
+            via: 'products'
         }
     }
 };
