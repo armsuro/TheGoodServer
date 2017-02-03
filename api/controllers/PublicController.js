@@ -38,9 +38,19 @@ module.exports = {
 
             var imageName = uploadedFiles[0].fd.split("protected_files/")[1];
 
-            var url = DOMAIN_NAME + "/get/" + imageName;
+            var url = DOMAIN_NAME + "/getImages/" + imageName;
 
             res.json(url);
         });
+    },
+    getImages: function(req, res) {
+        var file = req.param('file');
+
+        var filePath = sails.config.appPath + "/protected_files/" + file;
+        if (fs.existsSync(filePath)) {
+            fs.createReadStream(filePath).pipe(res);
+        } else {
+            res.json(400, Msg.getMessage(400))
+        }
     }
 }
