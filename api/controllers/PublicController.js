@@ -11,13 +11,24 @@ module.exports = {
         }
     },
     getSliderData: function(req, res) {
-        Sliders.find({
-            status: true
-        }).exec(function(err, data) {
-            if (err) return res.serverError(err)
+        var getSleder = function(position) {
+            Sliders.find({
+                status: true,
+                position: position
+            }).exec(function(err, data) {
+                if (err) return res.serverError(err)
 
-            res.json(data)
-        })
+                res.json(data)
+            })
+        }
+        async.parallel({
+            "topSlider": getSleder(1),
+            "middleSlider": getSleder(2)
+        }, function(err, data) {
+            if (err) return res.serverError(err);
+
+            res.json(data);
+        });
     },
     uploadImages: function(req, res) {
         req.file('file').upload({
