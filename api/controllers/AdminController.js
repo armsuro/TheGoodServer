@@ -1,8 +1,8 @@
 module.exports = {
     updateAboutUs: function(req, res) {
-        if (req.body.id && req.body.text) {
+        if (req.body.text) {
             AboutUs.update({
-                id: req.body.id
+                id: 1
             }, {
                 text: req.body.text
             }).exec(function(err, data) {

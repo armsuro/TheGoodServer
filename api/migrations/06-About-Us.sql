@@ -1,0 +1,1 @@
+INSERT INTO `about_us` (`text`, `id`, `created_at`) VALUES ('Demo', NULL, NULL);
