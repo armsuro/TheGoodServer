@@ -52,5 +52,14 @@ module.exports = {
         } else {
             res.json(400, Msg.getMessage(400))
         }
+    },
+    getCategories: function(req, res) {
+        Categories.find({
+            status: 1
+        }).exec(function(err, data) {
+            if (err) return res.serverError(err)
+
+            res.json(data)
+        })
     }
 }

@@ -14,6 +14,10 @@ module.exports = {
             columnName: "created_at",
             type: "datetime"
         },
+        status: {
+            type: "boolean",
+            defaultsTo: true
+        },
         products: {
             collection: 'Products',
             via: 'categories'
