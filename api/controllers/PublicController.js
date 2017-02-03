@@ -61,5 +61,34 @@ module.exports = {
 
             res.json(data)
         })
+    },
+    getProducts: function(req, res) {
+            console.log(111)
+        if (req.body.page && req.body.page.currentPage && req.body.page.limit) {
+            var condition = {
+                "status": 1
+            }
+
+            if (req.body.filter) {
+                condition["category_id"] = req.body.filter
+            }
+
+            Products.count(condition).exec(function(err, count) {
+                if (err) return res.serverError(err)
+
+                Products.find(condition).paginate({
+                    page: req.body.page.currentPage,
+                    limit: req.body.page.limit
+                }).sort('id DESC').exec(function(err, data) {
+                    if (err) return res.serverError(err)
+
+                    res.json({
+                        "count": count, "data": data
+                    })
+                })
+            })
+        } else {
+            res.json(400, Msg.getMessage(400))
+        }
     }
 }
